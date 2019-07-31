@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.19.80"
 
 \relative c'' {
       \global
@@ -54,7 +54,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
       ef8\< ef16 c f4~ f8 ef16 g
       c,8-1 c'16 c, f8-4 g16 af \grace { \stemDown bf16^( } af8.)\trill \stemNeutral g32 af
@@ -92,7 +92,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
           c\< d! ef f g f ef d a' b c |
       b16 c b a g8 f16 ef f4~
@@ -173,16 +173,16 @@
       r8 g4.-4~ g8 <f af,>->
       %% Takt 135 =====================================================
       r8 g4.~ g8 <f b,>->
-      r8 g4.-2~\>\( \times 2/3 { \triolen g16 f( ef)\) ef( d c) |
+      r8 g4.-2~\>\( \tuplet 3/2 { \triolen g16 f( ef)\) ef( d c) |
         c16(\mp b a) a( b c) b^\markup { \italic simile } c d d-1 ef f ef f g g-2 af! bf!
        af16 g f f-3 ef d d ef f f-2 g af } b,4-1\trill
-      \times 2/3 { \triolen c'16-3 bf! af af g f f ef d d ef f f g a a b c }
+      \tuplet 3/2 { \triolen c'16-3 bf! af af g f f ef d d ef f f g a a b c }
       %% Takt 140 =====================================================
       b8.[ a16] b8 r8 r \shiftOff b,,-2\p
-      \times 2/3 { \shiftOff \triolen c16-. d-. ef-. ef-. f-. g-. g-. a-. b-. b^\markup { \italic simile } c d d-1 ef f ef f d }
-      \duolen ef8 \times 2/3 { \triolen g16 f ef ef-3 d c c' bf af af g f f ef d |
+      \tuplet 3/2 { \shiftOff \triolen c16-. d-. ef-. ef-. f-. g-. g-. a-. b-. b^\markup { \italic simile } c d d-1 ef f ef f d }
+      \duolen ef8 \tuplet 3/2 { \triolen g16 f ef ef-3 d c c' bf af af g f f ef d |
       d16-3 c b b c d d-1 ef f f-2 g af } b,!8.-1\trill c16
-      c8 \times 2/3 { \triolen g16-3(\mf f ef) ef[( d c]) } \duolen c8 c'4~ % V 18
+      c8 \tuplet 3/2 { \triolen g16-3(\mf f ef) ef[( d c]) } \duolen c8 c'4~ % V 18
       %% Takt 145 =====================================================
       c8 b16 a b8 c16 d ef4~
       ef8 d16 c d8 ef16 f b,4~
@@ -201,7 +201,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
       c4~\< c16 d( c b) c4~
       c16 d( c b) c8 b16( a) b4~
@@ -375,7 +375,7 @@
         {
           % The following are cello cues:
           \set fontSize = #-5
-          \once \override TextScript #'extra-offset = #'(-1.5 . 2)
+          \once \override TextScript.extra-offset = #'(-1.5 . 2)
           r16_\markup { cello: } c,=' bf c af c f, af |
           c,2.*1/6( s8) 
         }

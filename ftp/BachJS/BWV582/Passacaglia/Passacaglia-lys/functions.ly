@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.19.80"
 
 %#(set-default-paper-size "letter")
 #(set-global-staff-size 18)
@@ -10,52 +10,40 @@
 global = {
    \key c \minor
    \time 3/4
-   \set tupletSpannerDuration = #(ly:make-moment 1 8)
-   \override TupletBracket  #'bracket-visibility = #'if-no-beam
+   \tupletSpan 8
+   \override TupletBracket.bracket-visibility = #'if-no-beam
 }
 
-adjustSlash = { \once \override TextScript #'extra-offset = #'( -2 . 5 ) }
+adjustSlash = { \once \override TextScript.extra-offset = #'( -2 . 5 ) }
 halsdown = { \stemDown \tieDown \slurDown }
 halsneutral = { \stemNeutral \tieNeutral \slurNeutral }
 halsup = { \stemUp \tieUp \slurUp}
-hideBrackets = { \override TupletBracket #'bracket-visibility = ##f }
+hideBrackets = { \override TupletBracket.bracket-visibility = ##f }
 % hideTripletNumber = { \set tupletNumberFormatFunction = #'() }
-mmrestdown = { \once \override MultiMeasureRest #'staff-position = #-2 }
-mmrestdownn = { \once \override MultiMeasureRest #'staff-position = #-4 }
-mmrestup = { \once \override MultiMeasureRest #'staff-position = #4 }
-mmrestupp = { \once \override MultiMeasureRest #'staff-position = #6 }
-mmrestuppp = { \once \override MultiMeasureRest #'staff-position = #8 }
-mmrestupppp = { \once \override MultiMeasureRest #'staff-position = #10 }
-noflag = { \once \override Stem #'flag-style = #'no-flag }
-restdownnn = { \once \override MultiMeasureRest #'extra-offset = #'( 0.0 . -3.0 ) }
-restright = { \once \override Rest #'extra-offset = #'( 4.0 . 0.0 ) }
-scriptdown = { \once \override Script #'extra-offset = #'(0 . -1.3) }
-scriptdownn = { \once \override Script #'extra-offset = #'(0 . -2.3) }
-scriptdownnn = { \once \override Script #'extra-offset = #'(0 . -3.3) }
-scriptup = { \once \override Script #'extra-offset = #'(0 . 1.3) }
-showBrackets = { \override TupletBracket #'bracket-visibility = ##t }
+mmrestdown = { \once \override MultiMeasureRest.staff-position = #-2 }
+mmrestdownn = { \once \override MultiMeasureRest.staff-position = #-4 }
+mmrestup = { \once \override MultiMeasureRest.staff-position = #4 }
+mmrestupp = { \once \override MultiMeasureRest.staff-position = #6 }
+mmrestuppp = { \once \override MultiMeasureRest.staff-position = #8 }
+mmrestupppp = { \once \override MultiMeasureRest.staff-position = #10 }
+noflag = { \once \override Flag.style = #'no-flag }
+restdownnn = { \once \override MultiMeasureRest.extra-offset = #'( 0.0 . -3.0 ) }
+restright = { \once \override Rest.extra-offset = #'( 4.0 . 0.0 ) }
+scriptdown = { \once \override Script.extra-offset = #'(0 . -1.3) }
+scriptdownn = { \once \override Script.extra-offset = #'(0 . -2.3) }
+scriptdownnn = { \once \override Script.extra-offset = #'(0 . -3.3) }
+scriptup = { \once \override Script.extra-offset = #'(0 . 1.3) }
+showBrackets = { \override TupletBracket.bracket-visibility = ##t }
 % showTripletNumber = { \set tupletNumberFormatFunction = #denominator-tuplet-formatter }
 
 triolen = {
-   #(override-auto-beam-setting '(end * * * *) 1 8)
-   #(override-auto-beam-setting '(end * * * *) 2 8)
-   #(override-auto-beam-setting '(end * * * *) 3 8)
-   #(override-auto-beam-setting '(end * * * *) 4 8)
-   #(override-auto-beam-setting '(end * * * *) 5 8)
-   #(override-auto-beam-setting '(end * * * *) 6 8)
-   #(override-auto-beam-setting '(end * * * *) 7 8)
-   #(override-auto-beam-setting '(end * * * *) 8 8)
+  \set subdivideBeams = ##t
+  \set baseMoment = #(ly:make-moment 1/16)
+  \set beatStructure = 4,4
 }
 
 duolen = {
-   #(revert-auto-beam-setting '(end * * * *) 1 8)
-   #(revert-auto-beam-setting '(end * * * *) 2 8)
-   #(revert-auto-beam-setting '(end * * * *) 3 8)
-   #(revert-auto-beam-setting '(end * * * *) 4 8)
-   #(revert-auto-beam-setting '(end * * * *) 5 8)
-   #(revert-auto-beam-setting '(end * * * *) 6 8)
-   #(revert-auto-beam-setting '(end * * * *) 7 8)
-   #(revert-auto-beam-setting '(end * * * *) 8 8)
+  \set baseMoment = #(ly:make-moment 1/4)
 }
 
 % The following function (copied straight from the Lilypond

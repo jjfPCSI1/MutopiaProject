@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.19.80"
 
 \relative ef' {
       \global
@@ -55,7 +55,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
           b16\< g c4~
       c4 r8 d16 a b4
@@ -94,7 +94,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
           df\< c bf! af c d ef f g f ef
       d4~ d16 ef d c b c b a
@@ -181,22 +181,22 @@
             \teeny { s16 s8( g'=''16*2/3^\markup { v1 } f=''[ ef)] ef( d c) }
           }
           \\
-          { b='16_(\> c fs, g8~ \times 2/3 { g16) f( ef)\! } | } 
+          { b='16_(\> c fs, g8~ \tuplet 3/2 { g16) f( ef)\! } | } 
 %           \\ 
 %           { s16 c'=''8~ \noBeam c s } 
         >>
-      \times 2/3 { \triolen \tupletDown
+      \tuplet 3/2 { \triolen \tupletDown
          ef='16(\mp d c) c( b a)
-            \once \override TupletBracket #'staff-padding = #-3 g( a b)
-            \once \override TupletBracket #'staff-padding = #-3 b^\markup { \italic simile } c d c d ef ef f g
-            f16 g af af g f f ef d d ef f f g af } \times 2/3 { g8\noBeam f16 } |
-      ef8[ \times 2/3 { \triolen c'16 bf af] af g f f ef d d ef f f g af
+            \once \override TupletBracket.staff-padding = #-3 g( a b)
+            \once \override TupletBracket.staff-padding = #-3 b^\markup { \italic simile } c d c d ef ef f g
+            f16 g af af g f f ef d d ef f f g af } \tuplet 3/2 { g8\noBeam f16 } |
+      ef8[ \tuplet 3/2 { \triolen c'16 bf af] af g f f ef d d ef f f g af
       %% Takt 140 =====================================================
       g16 a b b c d d ef f f g af af g f \shiftOff f ef d }
       g4 r4 r8 g,~\p
-      \times 2/3 { g16 f-. ef-. ef-. d-. c-. c-. bf-. af-. af^\markup { \italic { simile } } g f f'=' ef d d c b
+      \tuplet 3/2 { g16 f-. ef-. ef-. d-. c-. c-. bf-. af-. af^\markup { \italic { simile } } g f f'=' ef d d c b
       \stemNeutral b16 a g g a b b c d d ef f f g af! g af f
-      ef16-.[ f-. d-.] } c8 \times 2/3 { g16(\mf f ef) ef( d c) } 
+      ef16-.[ f-. d-.] } c8 \tuplet 3/2 { g16(\mf f ef) ef( d c) } 
         \duolen ef'='4~  |
       %% Takt 145 =====================================================
       ef8 d16 c d8 ef16 f g4~
@@ -217,7 +217,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
           f(\< ef d) ef4~ ef16 f( ef d)
       ef4~ ef16 ef( d c) d4~

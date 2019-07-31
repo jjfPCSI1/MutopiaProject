@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.19.80"
 
 \relative c {
       \global
@@ -62,7 +62,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
           ef16\< c
       f4 r r8 g16 ef
@@ -100,7 +100,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
     
       af2\< f4
       g2 d4
@@ -207,7 +207,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
       af2\< f4
       g2 d4
@@ -354,7 +354,7 @@
       << { r4
           % The following are viola cues:
           \set fontSize = #-5 { 
-            \once \override TextScript #'extra-offset = #'(-1 . -4)
+            \once \override TextScript.extra-offset = #'(-1 . -4)
               r16^\markup { vla } af'= g af 
             }
           \normalsize f=4---4

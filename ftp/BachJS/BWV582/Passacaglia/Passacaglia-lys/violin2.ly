@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.19.80"
 
 \relative g' {
       \global
@@ -54,7 +54,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
             g16\< ef
       af4~ af8 f g4
@@ -93,7 +93,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { cresc. poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
           f\< ef d! c8 r r4 |
       r16 fs g a b a b c d4~ |
@@ -198,7 +198,7 @@
       %%% using the \< for the 'hairpin' crescendo:
       \set crescendoText = \markup { \italic { crescendo poco a poco } }  %% sets words for the cresc.
       \set crescendoSpanner = #'text
-      \override DynamicTextSpanner #'style = #'dashed-line                %% stretches it out with dashes.
+      \override DynamicTextSpanner.style = #'dashed-line                %% stretches it out with dashes.
 
       g2\< af4
       g2~ g16 af( g f)

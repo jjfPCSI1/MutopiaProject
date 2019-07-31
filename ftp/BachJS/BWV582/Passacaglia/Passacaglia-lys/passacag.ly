@@ -1,4 +1,4 @@
-\version "2.12.2"
+\version "2.19.80"
 
 %% This is to set the overall staff and
 %% music glyphs size (smaller, since this is the score).
@@ -55,10 +55,7 @@
    \layout{ }
    
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 72 4)
-      }
+    \tempo 4 = 72
     }
 
 }

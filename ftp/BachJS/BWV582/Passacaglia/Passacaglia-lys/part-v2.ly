@@ -1,4 +1,4 @@
-\version "2.12.2"
+\version "2.19.80"
 
 \include "english.ly"
 \include "functions.ly"
@@ -16,8 +16,8 @@
   % This is to try to make the page breaks good:
 %   #(define page-breaking ly:page-turn-breaking)
 %   but it makes the score too squished together.
-  between-system-padding = 2\mm
-  between-title-space = 1\mm
+  obsolete-between-system-padding = 2\mm  system-system-spacing #'padding = #(/ obsolete-between-system-padding staff-space)  score-system-spacing #'padding = #(/ obsolete-between-system-padding staff-space)
+  obsolete-between-title-space = 1\mm  markup-markup-spacing #'basic-distance = #(/ obsolete-between-title-space staff-space)
   ragged-bottom = ##t
   ragged-last-bottom = ##t
 }
@@ -37,9 +37,6 @@
   
   \layout { }
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 72 4)
-    }
+    \tempo 4 = 72
   }
 }
